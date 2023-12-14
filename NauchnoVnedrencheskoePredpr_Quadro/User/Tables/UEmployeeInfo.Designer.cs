@@ -30,13 +30,12 @@ namespace NauchnoVnedrencheskoePredpr_Quadro.User.Tables
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UEmployeeInfo));
             this.panel_main = new System.Windows.Forms.Panel();
             this.rdbtn_DESC = new System.Windows.Forms.RadioButton();
             this.rdbtn_ASC = new System.Windows.Forms.RadioButton();
-            this.cmbbox_Filter = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.btn_Filter = new System.Windows.Forms.Button();
+            this.tb_srch = new System.Windows.Forms.TextBox();
             this.btn_Sort = new System.Windows.Forms.Button();
             this.btn_Search = new System.Windows.Forms.Button();
             this.btn_Last = new System.Windows.Forms.Button();
@@ -44,23 +43,23 @@ namespace NauchnoVnedrencheskoePredpr_Quadro.User.Tables
             this.btn_prev = new System.Windows.Forms.Button();
             this.btn_First = new System.Windows.Forms.Button();
             this.tableDataGrid = new System.Windows.Forms.DataGridView();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pb_func_Exit = new System.Windows.Forms.PictureBox();
-            this.pb_logo = new System.Windows.Forms.PictureBox();
-            this.quadroDataSet = new NauchnoVnedrencheskoePredpr_Quadro.QuadroDataSet();
-            this.employeesInfoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.employees_InfoTableAdapter = new NauchnoVnedrencheskoePredpr_Quadro.QuadroDataSetTableAdapters.Employees_InfoTableAdapter();
             this.employeeidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.employeeadressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.employeeexperienceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.employeelanguageDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.employeesInfoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.quadroDataSet = new NauchnoVnedrencheskoePredpr_Quadro.QuadroDataSet();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pb_func_Exit = new System.Windows.Forms.PictureBox();
+            this.pb_logo = new System.Windows.Forms.PictureBox();
+            this.employees_InfoTableAdapter = new NauchnoVnedrencheskoePredpr_Quadro.QuadroDataSetTableAdapters.Employees_InfoTableAdapter();
             this.panel_main.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tableDataGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employeesInfoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quadroDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_func_Exit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_logo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.quadroDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.employeesInfoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel_main
@@ -70,9 +69,7 @@ namespace NauchnoVnedrencheskoePredpr_Quadro.User.Tables
             this.panel_main.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(217)))), ((int)(((byte)(195)))));
             this.panel_main.Controls.Add(this.rdbtn_DESC);
             this.panel_main.Controls.Add(this.rdbtn_ASC);
-            this.panel_main.Controls.Add(this.cmbbox_Filter);
-            this.panel_main.Controls.Add(this.textBox1);
-            this.panel_main.Controls.Add(this.btn_Filter);
+            this.panel_main.Controls.Add(this.tb_srch);
             this.panel_main.Controls.Add(this.btn_Sort);
             this.panel_main.Controls.Add(this.btn_Search);
             this.panel_main.Controls.Add(this.btn_Last);
@@ -88,7 +85,7 @@ namespace NauchnoVnedrencheskoePredpr_Quadro.User.Tables
             // rdbtn_DESC
             // 
             this.rdbtn_DESC.AutoSize = true;
-            this.rdbtn_DESC.Location = new System.Drawing.Point(589, 67);
+            this.rdbtn_DESC.Location = new System.Drawing.Point(623, 283);
             this.rdbtn_DESC.Name = "rdbtn_DESC";
             this.rdbtn_DESC.Size = new System.Drawing.Size(83, 27);
             this.rdbtn_DESC.TabIndex = 11;
@@ -99,7 +96,7 @@ namespace NauchnoVnedrencheskoePredpr_Quadro.User.Tables
             // rdbtn_ASC
             // 
             this.rdbtn_ASC.AutoSize = true;
-            this.rdbtn_ASC.Location = new System.Drawing.Point(589, 34);
+            this.rdbtn_ASC.Location = new System.Drawing.Point(623, 250);
             this.rdbtn_ASC.Name = "rdbtn_ASC";
             this.rdbtn_ASC.Size = new System.Drawing.Size(83, 27);
             this.rdbtn_ASC.TabIndex = 10;
@@ -107,37 +104,19 @@ namespace NauchnoVnedrencheskoePredpr_Quadro.User.Tables
             this.rdbtn_ASC.Text = "Точка 1";
             this.rdbtn_ASC.UseVisualStyleBackColor = true;
             // 
-            // cmbbox_Filter
+            // tb_srch
             // 
-            this.cmbbox_Filter.FormattingEnabled = true;
-            this.cmbbox_Filter.Location = new System.Drawing.Point(560, 221);
-            this.cmbbox_Filter.Name = "cmbbox_Filter";
-            this.cmbbox_Filter.Size = new System.Drawing.Size(199, 31);
-            this.cmbbox_Filter.TabIndex = 9;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(26, 273);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(212, 29);
-            this.textBox1.TabIndex = 8;
-            // 
-            // btn_Filter
-            // 
-            this.btn_Filter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(108)))), ((int)(((byte)(10)))));
-            this.btn_Filter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Filter.Location = new System.Drawing.Point(608, 263);
-            this.btn_Filter.Name = "btn_Filter";
-            this.btn_Filter.Size = new System.Drawing.Size(105, 39);
-            this.btn_Filter.TabIndex = 7;
-            this.btn_Filter.Text = "Фильтр";
-            this.btn_Filter.UseVisualStyleBackColor = false;
+            this.tb_srch.Location = new System.Drawing.Point(26, 273);
+            this.tb_srch.Name = "tb_srch";
+            this.tb_srch.Size = new System.Drawing.Size(212, 29);
+            this.tb_srch.TabIndex = 8;
+            this.tb_srch.TextChanged += new System.EventHandler(this.tb_srch_TextChanged);
             // 
             // btn_Sort
             // 
             this.btn_Sort.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(108)))), ((int)(((byte)(10)))));
             this.btn_Sort.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Sort.Location = new System.Drawing.Point(608, 100);
+            this.btn_Sort.Location = new System.Drawing.Point(614, 316);
             this.btn_Sort.Name = "btn_Sort";
             this.btn_Sort.Size = new System.Drawing.Size(105, 39);
             this.btn_Sort.TabIndex = 6;
@@ -154,6 +133,7 @@ namespace NauchnoVnedrencheskoePredpr_Quadro.User.Tables
             this.btn_Search.TabIndex = 5;
             this.btn_Search.Text = "Поиск";
             this.btn_Search.UseVisualStyleBackColor = false;
+            this.btn_Search.Click += new System.EventHandler(this.btn_Search_Click);
             // 
             // btn_Last
             // 
@@ -165,6 +145,7 @@ namespace NauchnoVnedrencheskoePredpr_Quadro.User.Tables
             this.btn_Last.TabIndex = 4;
             this.btn_Last.Text = "Последняя";
             this.btn_Last.UseVisualStyleBackColor = false;
+            this.btn_Last.Click += new System.EventHandler(this.btn_Last_Click);
             // 
             // btn_next
             // 
@@ -176,6 +157,7 @@ namespace NauchnoVnedrencheskoePredpr_Quadro.User.Tables
             this.btn_next.TabIndex = 3;
             this.btn_next.Text = "Вперед";
             this.btn_next.UseVisualStyleBackColor = false;
+            this.btn_next.Click += new System.EventHandler(this.btn_next_Click);
             // 
             // btn_prev
             // 
@@ -187,6 +169,7 @@ namespace NauchnoVnedrencheskoePredpr_Quadro.User.Tables
             this.btn_prev.TabIndex = 2;
             this.btn_prev.Text = "Назад";
             this.btn_prev.UseVisualStyleBackColor = false;
+            this.btn_prev.Click += new System.EventHandler(this.btn_prev_Click);
             // 
             // btn_First
             // 
@@ -198,11 +181,14 @@ namespace NauchnoVnedrencheskoePredpr_Quadro.User.Tables
             this.btn_First.TabIndex = 1;
             this.btn_First.Text = "Первая";
             this.btn_First.UseVisualStyleBackColor = false;
+            this.btn_First.Click += new System.EventHandler(this.btn_First_Click);
             // 
             // tableDataGrid
             // 
             this.tableDataGrid.AllowUserToAddRows = false;
             this.tableDataGrid.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(108)))), ((int)(((byte)(10)))));
+            this.tableDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.tableDataGrid.AutoGenerateColumns = false;
             this.tableDataGrid.BackgroundColor = System.Drawing.Color.Black;
             this.tableDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -218,6 +204,46 @@ namespace NauchnoVnedrencheskoePredpr_Quadro.User.Tables
             this.tableDataGrid.ReadOnly = true;
             this.tableDataGrid.Size = new System.Drawing.Size(538, 249);
             this.tableDataGrid.TabIndex = 0;
+            // 
+            // employeeidDataGridViewTextBoxColumn
+            // 
+            this.employeeidDataGridViewTextBoxColumn.DataPropertyName = "Employee_id";
+            this.employeeidDataGridViewTextBoxColumn.HeaderText = "Код Работника";
+            this.employeeidDataGridViewTextBoxColumn.Name = "employeeidDataGridViewTextBoxColumn";
+            this.employeeidDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // employeeadressDataGridViewTextBoxColumn
+            // 
+            this.employeeadressDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.employeeadressDataGridViewTextBoxColumn.DataPropertyName = "Employee_adress";
+            this.employeeadressDataGridViewTextBoxColumn.HeaderText = "Адрес Работника";
+            this.employeeadressDataGridViewTextBoxColumn.Name = "employeeadressDataGridViewTextBoxColumn";
+            this.employeeadressDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // employeeexperienceDataGridViewTextBoxColumn
+            // 
+            this.employeeexperienceDataGridViewTextBoxColumn.DataPropertyName = "Employee_experience";
+            this.employeeexperienceDataGridViewTextBoxColumn.HeaderText = "Опыт работника";
+            this.employeeexperienceDataGridViewTextBoxColumn.Name = "employeeexperienceDataGridViewTextBoxColumn";
+            this.employeeexperienceDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // employeelanguageDataGridViewTextBoxColumn
+            // 
+            this.employeelanguageDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.employeelanguageDataGridViewTextBoxColumn.DataPropertyName = "Employee_language";
+            this.employeelanguageDataGridViewTextBoxColumn.HeaderText = "Язык программирования, на котором пишет Работник";
+            this.employeelanguageDataGridViewTextBoxColumn.Name = "employeelanguageDataGridViewTextBoxColumn";
+            this.employeelanguageDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // employeesInfoBindingSource
+            // 
+            this.employeesInfoBindingSource.DataMember = "Employees_Info";
+            this.employeesInfoBindingSource.DataSource = this.quadroDataSet;
+            // 
+            // quadroDataSet
+            // 
+            this.quadroDataSet.DataSetName = "QuadroDataSet";
+            this.quadroDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // pictureBox1
             // 
@@ -253,49 +279,9 @@ namespace NauchnoVnedrencheskoePredpr_Quadro.User.Tables
             this.pb_logo.TabIndex = 18;
             this.pb_logo.TabStop = false;
             // 
-            // quadroDataSet
-            // 
-            this.quadroDataSet.DataSetName = "QuadroDataSet";
-            this.quadroDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // employeesInfoBindingSource
-            // 
-            this.employeesInfoBindingSource.DataMember = "Employees_Info";
-            this.employeesInfoBindingSource.DataSource = this.quadroDataSet;
-            // 
             // employees_InfoTableAdapter
             // 
             this.employees_InfoTableAdapter.ClearBeforeFill = true;
-            // 
-            // employeeidDataGridViewTextBoxColumn
-            // 
-            this.employeeidDataGridViewTextBoxColumn.DataPropertyName = "Employee_id";
-            this.employeeidDataGridViewTextBoxColumn.HeaderText = "Код Работника";
-            this.employeeidDataGridViewTextBoxColumn.Name = "employeeidDataGridViewTextBoxColumn";
-            this.employeeidDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // employeeadressDataGridViewTextBoxColumn
-            // 
-            this.employeeadressDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.employeeadressDataGridViewTextBoxColumn.DataPropertyName = "Employee_adress";
-            this.employeeadressDataGridViewTextBoxColumn.HeaderText = "Адрес Работника";
-            this.employeeadressDataGridViewTextBoxColumn.Name = "employeeadressDataGridViewTextBoxColumn";
-            this.employeeadressDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // employeeexperienceDataGridViewTextBoxColumn
-            // 
-            this.employeeexperienceDataGridViewTextBoxColumn.DataPropertyName = "Employee_experience";
-            this.employeeexperienceDataGridViewTextBoxColumn.HeaderText = "Опыт работника";
-            this.employeeexperienceDataGridViewTextBoxColumn.Name = "employeeexperienceDataGridViewTextBoxColumn";
-            this.employeeexperienceDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // employeelanguageDataGridViewTextBoxColumn
-            // 
-            this.employeelanguageDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.employeelanguageDataGridViewTextBoxColumn.DataPropertyName = "Employee_language";
-            this.employeelanguageDataGridViewTextBoxColumn.HeaderText = "Язык программирования, на котором пишет Работник";
-            this.employeelanguageDataGridViewTextBoxColumn.Name = "employeelanguageDataGridViewTextBoxColumn";
-            this.employeelanguageDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // UEmployeeInfo
             // 
@@ -319,11 +305,11 @@ namespace NauchnoVnedrencheskoePredpr_Quadro.User.Tables
             this.panel_main.ResumeLayout(false);
             this.panel_main.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tableDataGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employeesInfoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quadroDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_func_Exit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_logo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.quadroDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.employeesInfoBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -333,9 +319,7 @@ namespace NauchnoVnedrencheskoePredpr_Quadro.User.Tables
         private System.Windows.Forms.Panel panel_main;
         private System.Windows.Forms.RadioButton rdbtn_DESC;
         private System.Windows.Forms.RadioButton rdbtn_ASC;
-        private System.Windows.Forms.ComboBox cmbbox_Filter;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button btn_Filter;
+        private System.Windows.Forms.TextBox tb_srch;
         private System.Windows.Forms.Button btn_Sort;
         private System.Windows.Forms.Button btn_Search;
         private System.Windows.Forms.Button btn_Last;

@@ -30,8 +30,18 @@ namespace NauchnoVnedrencheskoePredpr_Quadro.User
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UBankInfo));
             this.panel_main = new System.Windows.Forms.Panel();
+            this.rdbtn_DESC = new System.Windows.Forms.RadioButton();
+            this.rdbtn_ASC = new System.Windows.Forms.RadioButton();
+            this.tb_srch = new System.Windows.Forms.TextBox();
+            this.btn_Sort = new System.Windows.Forms.Button();
+            this.btn_Search = new System.Windows.Forms.Button();
+            this.btn_Last = new System.Windows.Forms.Button();
+            this.btn_next = new System.Windows.Forms.Button();
+            this.btn_prev = new System.Windows.Forms.Button();
+            this.btn_First = new System.Windows.Forms.Button();
             this.tableDataGrid = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -40,17 +50,6 @@ namespace NauchnoVnedrencheskoePredpr_Quadro.User
             this.quadroDataSet = new NauchnoVnedrencheskoePredpr_Quadro.QuadroDataSet();
             this.bank_InfoTableAdapter = new NauchnoVnedrencheskoePredpr_Quadro.QuadroDataSetTableAdapters.Bank_InfoTableAdapter();
             this.tableAdapterManager = new NauchnoVnedrencheskoePredpr_Quadro.QuadroDataSetTableAdapters.TableAdapterManager();
-            this.btn_First = new System.Windows.Forms.Button();
-            this.btn_prev = new System.Windows.Forms.Button();
-            this.btn_next = new System.Windows.Forms.Button();
-            this.btn_Last = new System.Windows.Forms.Button();
-            this.btn_Search = new System.Windows.Forms.Button();
-            this.btn_Sort = new System.Windows.Forms.Button();
-            this.btn_Filter = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.cmbbox_Filter = new System.Windows.Forms.ComboBox();
-            this.rdbtn_ASC = new System.Windows.Forms.RadioButton();
-            this.rdbtn_DESC = new System.Windows.Forms.RadioButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pb_func_Exit = new System.Windows.Forms.PictureBox();
             this.pb_logo = new System.Windows.Forms.PictureBox();
@@ -70,9 +69,7 @@ namespace NauchnoVnedrencheskoePredpr_Quadro.User
             this.panel_main.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(217)))), ((int)(((byte)(195)))));
             this.panel_main.Controls.Add(this.rdbtn_DESC);
             this.panel_main.Controls.Add(this.rdbtn_ASC);
-            this.panel_main.Controls.Add(this.cmbbox_Filter);
-            this.panel_main.Controls.Add(this.textBox1);
-            this.panel_main.Controls.Add(this.btn_Filter);
+            this.panel_main.Controls.Add(this.tb_srch);
             this.panel_main.Controls.Add(this.btn_Sort);
             this.panel_main.Controls.Add(this.btn_Search);
             this.panel_main.Controls.Add(this.btn_Last);
@@ -85,10 +82,113 @@ namespace NauchnoVnedrencheskoePredpr_Quadro.User
             this.panel_main.Size = new System.Drawing.Size(776, 370);
             this.panel_main.TabIndex = 17;
             // 
+            // rdbtn_DESC
+            // 
+            this.rdbtn_DESC.AutoSize = true;
+            this.rdbtn_DESC.Location = new System.Drawing.Point(585, 295);
+            this.rdbtn_DESC.Name = "rdbtn_DESC";
+            this.rdbtn_DESC.Size = new System.Drawing.Size(83, 27);
+            this.rdbtn_DESC.TabIndex = 11;
+            this.rdbtn_DESC.TabStop = true;
+            this.rdbtn_DESC.Text = "Точка 2";
+            this.rdbtn_DESC.UseVisualStyleBackColor = true;
+            // 
+            // rdbtn_ASC
+            // 
+            this.rdbtn_ASC.AutoSize = true;
+            this.rdbtn_ASC.Location = new System.Drawing.Point(585, 262);
+            this.rdbtn_ASC.Name = "rdbtn_ASC";
+            this.rdbtn_ASC.Size = new System.Drawing.Size(83, 27);
+            this.rdbtn_ASC.TabIndex = 10;
+            this.rdbtn_ASC.TabStop = true;
+            this.rdbtn_ASC.Text = "Точка 1";
+            this.rdbtn_ASC.UseVisualStyleBackColor = true;
+            // 
+            // tb_srch
+            // 
+            this.tb_srch.Location = new System.Drawing.Point(26, 273);
+            this.tb_srch.Name = "tb_srch";
+            this.tb_srch.Size = new System.Drawing.Size(212, 29);
+            this.tb_srch.TabIndex = 8;
+            this.tb_srch.TextChanged += new System.EventHandler(this.tb_srch_TextChanged);
+            // 
+            // btn_Sort
+            // 
+            this.btn_Sort.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(108)))), ((int)(((byte)(10)))));
+            this.btn_Sort.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Sort.Location = new System.Drawing.Point(580, 328);
+            this.btn_Sort.Name = "btn_Sort";
+            this.btn_Sort.Size = new System.Drawing.Size(105, 39);
+            this.btn_Sort.TabIndex = 6;
+            this.btn_Sort.Text = "Сортировать";
+            this.btn_Sort.UseVisualStyleBackColor = false;
+            // 
+            // btn_Search
+            // 
+            this.btn_Search.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(108)))), ((int)(((byte)(10)))));
+            this.btn_Search.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Search.Location = new System.Drawing.Point(244, 270);
+            this.btn_Search.Name = "btn_Search";
+            this.btn_Search.Size = new System.Drawing.Size(105, 39);
+            this.btn_Search.TabIndex = 5;
+            this.btn_Search.Text = "Поиск";
+            this.btn_Search.UseVisualStyleBackColor = false;
+            this.btn_Search.Click += new System.EventHandler(this.btn_Search_Click);
+            // 
+            // btn_Last
+            // 
+            this.btn_Last.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(108)))), ((int)(((byte)(10)))));
+            this.btn_Last.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Last.Location = new System.Drawing.Point(355, 328);
+            this.btn_Last.Name = "btn_Last";
+            this.btn_Last.Size = new System.Drawing.Size(105, 39);
+            this.btn_Last.TabIndex = 4;
+            this.btn_Last.Text = "Последняя";
+            this.btn_Last.UseVisualStyleBackColor = false;
+            this.btn_Last.Click += new System.EventHandler(this.btn_Last_Click);
+            // 
+            // btn_next
+            // 
+            this.btn_next.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(108)))), ((int)(((byte)(10)))));
+            this.btn_next.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_next.Location = new System.Drawing.Point(244, 328);
+            this.btn_next.Name = "btn_next";
+            this.btn_next.Size = new System.Drawing.Size(105, 39);
+            this.btn_next.TabIndex = 3;
+            this.btn_next.Text = "Вперед";
+            this.btn_next.UseVisualStyleBackColor = false;
+            this.btn_next.Click += new System.EventHandler(this.btn_next_Click);
+            // 
+            // btn_prev
+            // 
+            this.btn_prev.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(108)))), ((int)(((byte)(10)))));
+            this.btn_prev.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_prev.Location = new System.Drawing.Point(133, 328);
+            this.btn_prev.Name = "btn_prev";
+            this.btn_prev.Size = new System.Drawing.Size(105, 39);
+            this.btn_prev.TabIndex = 2;
+            this.btn_prev.Text = "Назад";
+            this.btn_prev.UseVisualStyleBackColor = false;
+            this.btn_prev.Click += new System.EventHandler(this.btn_prev_Click);
+            // 
+            // btn_First
+            // 
+            this.btn_First.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(108)))), ((int)(((byte)(10)))));
+            this.btn_First.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_First.Location = new System.Drawing.Point(22, 328);
+            this.btn_First.Name = "btn_First";
+            this.btn_First.Size = new System.Drawing.Size(105, 39);
+            this.btn_First.TabIndex = 1;
+            this.btn_First.Text = "Первая";
+            this.btn_First.UseVisualStyleBackColor = false;
+            this.btn_First.Click += new System.EventHandler(this.btn_First_Click);
+            // 
             // tableDataGrid
             // 
             this.tableDataGrid.AllowUserToAddRows = false;
             this.tableDataGrid.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(108)))), ((int)(((byte)(10)))));
+            this.tableDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.tableDataGrid.AutoGenerateColumns = false;
             this.tableDataGrid.BackgroundColor = System.Drawing.Color.Black;
             this.tableDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -153,121 +253,6 @@ namespace NauchnoVnedrencheskoePredpr_Quadro.User
             this.tableAdapterManager.EmployeesTableAdapter = null;
             this.tableAdapterManager.ProjectsTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = NauchnoVnedrencheskoePredpr_Quadro.QuadroDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            // 
-            // btn_First
-            // 
-            this.btn_First.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(108)))), ((int)(((byte)(10)))));
-            this.btn_First.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_First.Location = new System.Drawing.Point(22, 328);
-            this.btn_First.Name = "btn_First";
-            this.btn_First.Size = new System.Drawing.Size(105, 39);
-            this.btn_First.TabIndex = 1;
-            this.btn_First.Text = "Первая";
-            this.btn_First.UseVisualStyleBackColor = false;
-            this.btn_First.Click += new System.EventHandler(this.btn_First_Click);
-            // 
-            // btn_prev
-            // 
-            this.btn_prev.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(108)))), ((int)(((byte)(10)))));
-            this.btn_prev.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_prev.Location = new System.Drawing.Point(133, 328);
-            this.btn_prev.Name = "btn_prev";
-            this.btn_prev.Size = new System.Drawing.Size(105, 39);
-            this.btn_prev.TabIndex = 2;
-            this.btn_prev.Text = "Назад";
-            this.btn_prev.UseVisualStyleBackColor = false;
-            // 
-            // btn_next
-            // 
-            this.btn_next.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(108)))), ((int)(((byte)(10)))));
-            this.btn_next.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_next.Location = new System.Drawing.Point(244, 328);
-            this.btn_next.Name = "btn_next";
-            this.btn_next.Size = new System.Drawing.Size(105, 39);
-            this.btn_next.TabIndex = 3;
-            this.btn_next.Text = "Вперед";
-            this.btn_next.UseVisualStyleBackColor = false;
-            // 
-            // btn_Last
-            // 
-            this.btn_Last.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(108)))), ((int)(((byte)(10)))));
-            this.btn_Last.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Last.Location = new System.Drawing.Point(355, 328);
-            this.btn_Last.Name = "btn_Last";
-            this.btn_Last.Size = new System.Drawing.Size(105, 39);
-            this.btn_Last.TabIndex = 4;
-            this.btn_Last.Text = "Последняя";
-            this.btn_Last.UseVisualStyleBackColor = false;
-            // 
-            // btn_Search
-            // 
-            this.btn_Search.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(108)))), ((int)(((byte)(10)))));
-            this.btn_Search.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Search.Location = new System.Drawing.Point(244, 270);
-            this.btn_Search.Name = "btn_Search";
-            this.btn_Search.Size = new System.Drawing.Size(105, 39);
-            this.btn_Search.TabIndex = 5;
-            this.btn_Search.Text = "Поиск";
-            this.btn_Search.UseVisualStyleBackColor = false;
-            // 
-            // btn_Sort
-            // 
-            this.btn_Sort.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(108)))), ((int)(((byte)(10)))));
-            this.btn_Sort.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Sort.Location = new System.Drawing.Point(608, 100);
-            this.btn_Sort.Name = "btn_Sort";
-            this.btn_Sort.Size = new System.Drawing.Size(105, 39);
-            this.btn_Sort.TabIndex = 6;
-            this.btn_Sort.Text = "Сортировать";
-            this.btn_Sort.UseVisualStyleBackColor = false;
-            // 
-            // btn_Filter
-            // 
-            this.btn_Filter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(108)))), ((int)(((byte)(10)))));
-            this.btn_Filter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Filter.Location = new System.Drawing.Point(608, 263);
-            this.btn_Filter.Name = "btn_Filter";
-            this.btn_Filter.Size = new System.Drawing.Size(105, 39);
-            this.btn_Filter.TabIndex = 7;
-            this.btn_Filter.Text = "Фильтр";
-            this.btn_Filter.UseVisualStyleBackColor = false;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(26, 273);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(212, 29);
-            this.textBox1.TabIndex = 8;
-            // 
-            // cmbbox_Filter
-            // 
-            this.cmbbox_Filter.FormattingEnabled = true;
-            this.cmbbox_Filter.Location = new System.Drawing.Point(560, 221);
-            this.cmbbox_Filter.Name = "cmbbox_Filter";
-            this.cmbbox_Filter.Size = new System.Drawing.Size(199, 31);
-            this.cmbbox_Filter.TabIndex = 9;
-            // 
-            // rdbtn_ASC
-            // 
-            this.rdbtn_ASC.AutoSize = true;
-            this.rdbtn_ASC.Location = new System.Drawing.Point(589, 34);
-            this.rdbtn_ASC.Name = "rdbtn_ASC";
-            this.rdbtn_ASC.Size = new System.Drawing.Size(83, 27);
-            this.rdbtn_ASC.TabIndex = 10;
-            this.rdbtn_ASC.TabStop = true;
-            this.rdbtn_ASC.Text = "Точка 1";
-            this.rdbtn_ASC.UseVisualStyleBackColor = true;
-            // 
-            // rdbtn_DESC
-            // 
-            this.rdbtn_DESC.AutoSize = true;
-            this.rdbtn_DESC.Location = new System.Drawing.Point(589, 67);
-            this.rdbtn_DESC.Name = "rdbtn_DESC";
-            this.rdbtn_DESC.Size = new System.Drawing.Size(83, 27);
-            this.rdbtn_DESC.TabIndex = 11;
-            this.rdbtn_DESC.TabStop = true;
-            this.rdbtn_DESC.Text = "Точка 2";
-            this.rdbtn_DESC.UseVisualStyleBackColor = true;
             // 
             // pictureBox1
             // 
@@ -355,12 +340,10 @@ namespace NauchnoVnedrencheskoePredpr_Quadro.User
         private System.Windows.Forms.Button btn_next;
         private System.Windows.Forms.Button btn_prev;
         private System.Windows.Forms.Button btn_First;
-        private System.Windows.Forms.Button btn_Filter;
         private System.Windows.Forms.Button btn_Sort;
         private System.Windows.Forms.Button btn_Search;
         private System.Windows.Forms.RadioButton rdbtn_DESC;
         private System.Windows.Forms.RadioButton rdbtn_ASC;
-        private System.Windows.Forms.ComboBox cmbbox_Filter;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tb_srch;
     }
 }
